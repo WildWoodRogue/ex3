@@ -1,4 +1,3 @@
-/* Общие стили */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -22,10 +21,10 @@ header {
 }
 
 
-main {
-    max-width: px;
-    margin: 0 auto;
 
+main {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
 section {
@@ -37,7 +36,8 @@ section {
 
 tbody tr td{background-color: #a3c9ee;
     padding: 10px;
-    border: 5px solid #88a4f1;}
+    border: 5px solid #88a4f1;
+    }
 thead th {
     background-color: #6699cc;
     color: white;
@@ -81,45 +81,61 @@ footer p {
     margin: 0 auto;
 }
 
+/* Media Queries for Mobile Optimization */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+    }
 
-.sidenav {
-    height: 100%;
-    width: 160px;
-    flex: 1;
-    order: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    
-    padding-top: 20px;
+    main {
+        max-width: 100%; /* Adjust to occupy almost full width */
+        padding: 10px;
+    }
+
+    section {
+        padding: 5px;
+        /* Reduce padding for smaller screens */
+    }
+
+    tbody tr td {
+        padding: 5px;
+         /* Reduce padding */
+    }
+
+    thead th {
+        font-size: 14px; /* Reduce font size */
+    }
+
+    input, textarea {
+        width: 100%; /* Make input fields full width */
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 100%; /* Make buttons full width */
+    }
+
+    footer {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 10px;
+    }
 }
 
-.sidenav a {
-    
-    
-    font-size: 25px;
-    color: #818181;
-    
+/* Media Queries for Larger Screens */
+@media screen and (min-width: 800px) {
+    header {
+        max-width: 960px;
+    }
+  }
+  @media screen and (max-width: 400px) {
+    header {
+        max-width: 400px;
+    }
+    main{
+        max-width: 400px;
+  }
 }
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
 
-.main {
-    margin-left: 0px; /* Same as the width of the sidenav */
-    font-size: 28px; /* Increased text to enable scrolling */
-    padding: 0px 10px;
-    flex: 3;
-    order: 2;
-}
-.mainside {
-    flex-direction: row;
-  display: flex;
-
-}
-
-@media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-}
